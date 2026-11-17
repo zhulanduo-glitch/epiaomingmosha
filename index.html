@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0c0e0d">
+  <meta name="author" content="广开兮穗门">
+  <meta name="description" content="明末杀：基于《饿殍：明末千里行》《哀鸿：城破十日记》的同人 1V1 / 1V2 卡牌游戏。作者：广开兮穗门。">
+  <title>明末杀 · 哀鸿城破十日记 | 广开兮穗门</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/icon-512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="assets/img/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app" class="app">
+
+    <!-- ==================== 封面 ==================== -->
+    <section id="screen-title" class="screen title-screen is-active" aria-label="封面">
+      <div class="title-atmosphere" aria-hidden="true">
+        <img class="title-bg" src="assets/img/aihong-hero.webp" alt="">
+        <div class="title-hero-wrap title-hero-left">
+          <img class="title-hero" src="assets/img/sulianyan-game.webp" alt="苏怜烟">
+        </div>
+        <div class="title-hero-wrap title-hero-right">
+          <img class="title-hero" src="assets/img/linpianpian-game.webp" alt="林翩翩">
+        </div>
+        <div class="ink-cloud ink-cloud-a"></div>
+        <div class="ink-cloud ink-cloud-b"></div>
+        <div class="grain"></div>
+        <div class="scanlines"></div>
+      </div>
+
+      <header class="title-brand">
+        <div class="brand-seal">殺</div>
+        <div class="brand-type">
+          <h1>明末杀</h1>
+          <p>MING&nbsp;MO&nbsp;SHA</p>
+          <span class="brand-author"><i>作</i><b>广开兮穗门</b></span>
+        </div>
+      </header>
+
+      <nav class="title-nav" aria-label="主页导航">
+        <button id="btn-history" class="title-nav-btn" type="button">战绩</button>
+        <button id="btn-cheats" class="title-nav-btn title-cheat-btn" type="button">作弊模式</button>
+        <button id="btn-changelog" class="title-nav-btn" type="button">更新日志 <em>Ver.0.90</em></button>
+        <button id="btn-bgm-title" class="title-nav-btn" type="button">音律</button>
+        <button id="btn-rules-title-nav" class="title-nav-btn" type="button">兵法</button>
+      </nav>
+
+      <div class="title-copy">
+        <p class="eyebrow"><span></span> 哀鸿 · 城破十日记 <span></span></p>
+        <h2>饿殍千里，<br><em>城破十日。</em></h2>
+        <p class="lede">崇祯元年至十七年，陕地、晋地、中原，饿殍遍野；乙酉年四月，扬州城破，十日不封刀。<br>你与一位乱世之人对坐。牌局之上，只活一个。</p>
+        <div class="title-actions">
+          <button id="btn-enter" class="btn btn-primary" type="button">
+            <span class="btn-glyph">入</span>
+            <span>入&nbsp;局</span>
+            <small>ENTER THE TABLE</small>
+          </button>
+          <button id="btn-rules-title" class="btn btn-ghost" type="button">兵&nbsp;法</button>
+        </div>
+        <div class="title-meta">
+          <span>1 V 1 / 1 V 2 / 1 V 5</span><i></i><span>二十六位武将</span><i></i><span>人机对战</span><i></i><span>广开兮穗门 作</span>
+        </div>
+        <div class="title-achievements" id="title-achievements">
+          <span class="ach-seal">成</span>
+          <div class="ach-copy"><b>成就栏</b><small id="title-ach-text">0 / 20 · 尚未解锁</small></div>
+          <div class="ach-track"><i id="title-ach-fill"></i></div>
+          <button id="btn-achievements" class="ach-open" type="button">查看成就 →</button>
+        </div>
+      </div>
+
+      <aside class="title-quote">
+        <span class="quote-mark">“</span>
+        <p>二十四桥的月亮，<br>还在么？</p>
+        <span class="quote-from">—— 苏怜烟</span>
+      </aside>
+
+      <footer class="title-footer">
+        <span>同人卡牌 · 基于《饿殍：明末千里行》《哀鸿：城破十日记》</span>
+        <span>作者 / 广开兮穗门 · 非商业作品</span>
+        <span class="title-version">Ver.0.90 · 穗禾</span>
+      </footer>
+    </section>
+
+    <!-- ==================== 择将 ==================== -->
+    <section id="screen-select" class="screen select-screen" aria-label="选择武将">
+      <div class="select-atmosphere" aria-hidden="true">
+        <div class="grain"></div>
+        <div class="select-ink"></div>
+        <div class="select-rain"></div>
+      </div>
+
+      <header class="sub-header">
+        <button id="btn-back-title" class="icon-text-btn" type="button" aria-label="返回封面">← 返回</button>
+        <div class="sub-title">
+          <span class="kicker">择&nbsp;将</span>
+          <h2>乱世之中，你是谁</h2>
+        </div>
+        <div class="sub-header-right">
+          <span class="author-credit">广开兮穗门 作</span>
+          <button id="btn-rules-select" class="icon-text-btn" type="button">兵法</button>
+        </div>
+      </header>
+
+      <main class="select-layout">
+        <section id="showcase" class="general-showcase" aria-live="polite">
+          <!-- injected -->
+        </section>
+
+        <aside class="roster-side">
+          <div class="roster-heading">
+            <span>二十六人 · 二十六种活法</span>
+            <small>点击选择</small>
+          </div>
+          <div id="roster" class="roster" role="listbox" aria-label="武将列表">
+            <!-- injected -->
+          </div>
+
+          <div class="match-setup">
+            <div class="setup-block">
+              <div class="setup-label">对局模式</div>
+              <div id="match-mode" class="difficulty mode-toggle" role="radiogroup" aria-label="对局模式">
+                <button class="diff-btn is-selected" type="button" data-mode="1v1">1 V 1<small>单挑</small></button>
+                <button class="diff-btn" type="button" data-mode="1v2">1 V 2<small>一挑二</small></button>
+                <button class="diff-btn" type="button" data-mode="1v5">1 V 5<small>五座围杀</small></button>
+              </div>
+            </div>
+            <div class="setup-block">
+              <div class="setup-label">对手</div>
+              <div id="opponent-preview" class="opponent-preview">
+                <span class="unknown-ink">？</span>
+                <div class="opponent-copy">
+                  <strong>人机 · 随机武将</strong>
+                  <small>踏入乱世后揭晓</small>
+                </div>
+                <button id="btn-opponents" class="opponent-pick" type="button">选择对手</button>
+              </div>
+            </div>
+            <div class="setup-block">
+              <div class="setup-label">人机强度</div>
+              <div id="difficulty" class="difficulty" role="radiogroup" aria-label="人机强度">
+                <!-- injected -->
+              </div>
+            </div>
+            <button id="btn-start" class="btn btn-primary btn-wide" type="button">
+              <span>踏入乱世</span>
+              <small>BEGIN THE DUEL</small>
+            </button>
+          </div>
+        </aside>
+      </main>
+    </section>
+
+    <!-- ==================== 对局 ==================== -->
+    <section id="screen-battle" class="screen battle-screen" aria-label="对局">
+      <div class="battle-atmosphere" aria-hidden="true">
+        <div class="battle-moon"></div>
+        <div class="battle-mountains"></div>
+        <div class="grain"></div>
+        <div class="battle-rain"></div>
+        <div class="battle-ash"></div>
+      </div>
+
+      <header class="battle-header">
+        <div class="battle-id">
+          <span class="mini-seal">鴻</span>
+          <div><strong>明末杀</strong><small>哀鸿 · 城破十日记</small></div>
+        </div>
+        <div class="turn-readout">
+          <span id="battle-round">第 1 回合</span>
+          <strong id="battle-turn">你的回合</strong>
+          <span id="battle-phase" class="phase-pill">出牌阶段</span>
+        </div>
+        <div class="battle-tools">
+          <button id="btn-rules-battle" class="tool-btn" type="button" title="兵法">兵法</button>
+          <button id="btn-sound" class="tool-btn tool-icon" type="button" title="音效" aria-label="切换音效">声</button>
+          <button id="btn-bgm" class="tool-btn tool-icon" type="button" title="音律 · 背景音乐" aria-label="背景音乐设置">乐</button>
+          <button id="btn-volume" class="tool-btn tool-icon" type="button" title="音效音量（调试）" aria-label="调整音效音量">量</button>
+          <button id="btn-surrender" class="tool-btn" type="button" title="认输">认输</button>
+          <button id="btn-log-mobile" class="tool-btn log-mobile-btn" type="button" title="战报">战报</button>
+        </div>
+      </header>
+
+      <main class="battle-layout">
+        <section class="seat enemy-seat" aria-label="对手">
+          <div id="enemy-panel" class="general-panel enemy-general"><!-- injected --></div>
+          <div id="enemy2-panel" class="general-panel enemy-general enemy2-general" hidden><!-- injected --></div>
+          <div id="enemy3-panel" class="general-panel enemy-general enemy2-general" hidden><!-- injected --></div>
+          <div id="enemy4-panel" class="general-panel enemy-general enemy2-general" hidden><!-- injected --></div>
+          <div id="enemy5-panel" class="general-panel enemy-general enemy2-general" hidden><!-- injected --></div>
+          <div id="enemy-hand" class="enemy-hand" aria-label="对手手牌"><!-- injected --></div>
+        </section>
+
+        <section class="stage" aria-label="牌桌">
+          <div class="stage-mark" aria-hidden="true">鴻</div>
+          <div class="stage-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="stage-piles">
+            <div class="pile-block" id="deck-pile" title="牌堆">
+              <div class="pile-cards"><span></span><span></span><span></span></div>
+              <b id="deck-count">0</b>
+              <small>牌堆</small>
+            </div>
+            <div class="stage-center">
+              <div id="turn-token" class="turn-token">
+                <span class="token-ring"></span>
+                <span id="turn-token-title">你</span>
+                <small id="turn-token-sub">出牌</small>
+              </div>
+              <div id="battle-hint" class="battle-hint">选择手牌，或在武将牌上发动技能</div>
+              <div id="judge-stage" class="judge-stage" aria-live="polite"></div>
+            </div>
+            <div class="pile-block" id="discard-pile" title="弃牌堆">
+              <div class="pile-cards discard-cards"><span></span><span></span><span></span></div>
+              <b id="discard-count">0</b>
+              <small>弃牌</small>
+            </div>
+          </div>
+          <div id="enemy-intent" class="enemy-intent"></div>
+        </section>
+
+        <aside id="log-panel" class="log-panel">
+          <header>
+            <span>战&nbsp;报</span>
+            <button id="btn-log-close" class="log-close" type="button" aria-label="收起战报">×</button>
+          </header>
+          <ol id="log-list" class="log-list"></ol>
+          <div class="log-foot">哀鸿 · 城破十日记　/　广开兮穗门 作</div>
+        </aside>
+
+        <section class="seat player-seat" aria-label="你的武将">
+          <div id="player-panel" class="general-panel player-general"><!-- injected --></div>
+        </section>
+
+        <section class="hand-zone" aria-label="你的手牌">
+          <div id="action-dock" class="action-dock">
+            <div class="action-copy">
+              <span id="action-kicker">你的回合</span>
+              <strong id="action-title">选择一张手牌</strong>
+              <small id="action-desc">点击手牌查看效果</small>
+            </div>
+            <div class="action-buttons">
+              <button id="btn-use-card" class="btn btn-small btn-primary" type="button" disabled>使用</button>
+              <button id="btn-cancel-card" class="btn btn-small btn-ghost" type="button" disabled>取消</button>
+              <button id="btn-end-turn" class="btn btn-small btn-end" type="button">结束回合</button>
+            </div>
+          </div>
+          <div id="player-hand" class="hand"><!-- injected --></div>
+          <div class="hand-shadow" aria-hidden="true"></div>
+        </section>
+      </main>
+
+      <div id="toast-layer" class="toast-layer" aria-live="polite"></div>
+      <div id="fx-layer" class="fx-layer" aria-hidden="true"></div>
+      <div id="banner-layer" class="banner-layer" aria-hidden="true"></div>
+    </section>
+
+    <div id="modal-root"></div>
+  </div>
+
+  <noscript>
+    <div class="noscript">明末杀需要启用 JavaScript 才能运行。</div>
+  </noscript>
+
+  <script src="js/data.js"></script>
+  <script src="js/killfx.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/laofang.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
